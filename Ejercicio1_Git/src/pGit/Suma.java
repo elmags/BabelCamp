@@ -11,4 +11,8 @@ public class Suma {
 		acumulado = suma(acumulado, x);
 		return acumulado;
 	}
+	
+	public static double suma(int x, double y) {
+		return (double) x + y;
+	}
 }
