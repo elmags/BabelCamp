@@ -11,4 +11,8 @@ public class Resta {
 		acumulado = resta(acumulado, x);
 		return acumulado;
 	}
+	
+	public static double resta(int x, double y) {
+		return (double) x - y;
+	}
 }
