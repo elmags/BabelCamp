@@ -2,4 +2,4 @@
 
 > <li> Ejercicio1_Git
 > <li> Ejercicio2_HTML
-> <li> Ejercicio2_HTML_y_CSS
+> <li> Ejercicio3_HTML_CSS
