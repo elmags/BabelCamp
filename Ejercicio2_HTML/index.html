@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body style="background: rgb(252, 220, 202)">
-    <p style="border: 2px solid rgb(0, 0, 0); padding: 20px; text-align: right;">
-        <a href="login.html" style="text-decoration: none;">Log in</a>
-    </p>
-    
-    <h1 style="text-align: center;">Reserva tu viaje
-    <img style="width: 30px;" id="fotoAvion" src="img/avion.png" alt="Avión" />
-    </h1>
 
-    <form action="procesarPeticion.jsp" method="get" style="margin: 10px;">
-        <input style="margin-left: 30.3%; padding: 20px; border-radius: 20px;" type="text" name="Origen" placeholder="Origen" />	
-        <input style="margin-left: 50px; padding: 20px; border-radius: 20px;" type="text" name="Destino" placeholder="Destino" />
-        <input style="margin-left: 50px; padding: 20px; border-radius: 20px;" type="date" name="Fecha" placeholder="Fecha" />
-        <br>
-        <input style="margin-left: 48.7%; margin-top: 30px; padding: 8px; border-radius: 5px;" type="submit" value="Buscar"/>
-    </form>
+<body>
+    <div class="header">
+        <a class="text" href="login.html">Log in</a>
+    </div>
 
-    <br>
-    <br>
-    <br> 
-    <h2 style="margin-left: 30px;">Las 10 ciudades más populares </h2>
+    <div class="title">
+        <h1>Reserva tu viaje
+            <img class="avion" id="fotoAvion" src="img/avion.png" alt="Avión" />
+        </h1>
+    </div>
 
-    <table style="margin-left: 30px;">
-        <tr>
-            <td> <a href="https://www.google.com/search?q=dubai&rlz=1C1GCEB_enES995ES995&oq=dubai&aqs=chrome.0.69i59j46i433i512j46i175i199i433i512j0i433j0i433i512l3j0i512l2j46i175i199i433i512.1839j0j7&sourceid=chrome&ie=UTF-8" target="_blank"> 
-                <img style="width: 330px" id="fotoDubai" src="img/dubai.jpg" alt="Dubai" title="Dubai" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=londres&rlz=1C1GCEB_enES995ES995&oq=londres&aqs=chrome.0.69i59j46i395i433i512j46i175i199i395i433i512j46i131i175i199i395i433i512j0i395i433i512j0i395i512j0i395i433i512j46i175i199i395i512j0i395i433i512j0i395i512.1095j1j7&sourceid=chrome&ie=UTF-8" target="_blank"> 
-                <img style="width: 350px" id="fotoLondres" src="img/londres.jpg" alt="Londres" title="Londres" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=estambul&rlz=1C1GCEB_enES995ES995&ei=x90hYv-JFMzj7_UPs9O24A8&ved=0ahUKEwi_icuSlKz2AhXM8bsIHbOpDfwQ4dUDCA4&uact=5&oq=estambul&gs_lcp=Cgdnd3Mtd2l6EAMyCgguELEDENQCEEMyCgguELEDENQCEEMyCAgAEIAEELEDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoECC4QQzoLCAAQgAQQsQMQgwE6BwguENQCEEM6CwguEIAEEMcBENEDOg4ILhCABBCxAxDHARDRAzoKCC4QsQMQgwEQQzoNCC4QsQMQgwEQ1AIQQzoECAAQQzoICAAQsQMQgwE6CgguEMcBEK8BEEM6CwguEIAEEMcBEK8BOgQIABADOggILhCABBCxAzoFCC4QgAQ6BQgAELEDSgQIQRgASgQIRhgAUABYzwlguRBoAHABeACAAX2IAcwGkgEDMy41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 320px" id="fotoEstambul" src="img/estambul.jpg" alt="Estambul" title="Estambul" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=nueva+york&rlz=1C1GCEB_enES995ES995&ei=6t0hYtnJH73k7_UPkLWckAI&gs_ssp=eJzj4tTP1TcwijeyMDNg9OLKK00tS1SozC_KBgBIQQbJ&oq=nueva&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCC4QsQMQ1AIQQzIECC4QQzIICC4QgAQQsQMyCwguEIAEEMcBEK8BMgcILhCxAxBDMggIABCABBCxAzIFCAAQsQMyBQgAEIAEMggIABCxAxCDATIICAAQgAQQsQM6BQguEIAEOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6EQguEIAEELEDEIMBEMcBEKMCOgsILhCABBCxAxCDAToOCC4QgAQQsQMQxwEQowI6BAgAEENKBAhBGABKBAhGGABQAFj5GGDOK2gAcAF4AIABkAGIAfsEkgEDMC41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 350px" id="fotoNuevaYork" src="img/nueva_york.jpg" alt="Nueva York" title="Nueva York" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=miami&rlz=1C1GCEB_enES995ES995&ei=O94hYr36GtP6gAbStrioAg&ved=0ahUKEwj9g_rJlKz2AhVTPcAKHVIbDiUQ4dUDCA4&uact=5&oq=miami&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyBwguELEDEEMyBAguEEMyCwguEIAEELEDEIMBMgQIABBDMgQIABBDMgsILhCABBCxAxDUAjIICC4QgAQQsQMyFAguEIAEELEDEIMBEMcBEK8BENQCMgsILhCABBDHARCvAToHCC4Q1AIQQzoLCAAQgAQQsQMQgwE6BggAEAoQQzoQCC4QsQMQxwEQowIQ1AIQQzoKCAAQsQMQgwEQQzoICAAQgAQQsQNKBAhBGABKBAhGGABQAFiuBWDZEGgAcAF4AIABxwGIAeAFkgEDMC41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 300px" id="fotoMiami" src="img/miami.jpg" alt="Miami" title="Miami" /> </a> </td>
-        </tr>
-        <tr>
-            <td> <a href="https://www.google.com/search?q=paris&rlz=1C1GCEB_enES995ES995&ei=R94hYsO3HYOV8gLZw5LADg&ved=0ahUKEwiD99jPlKz2AhWDilwKHdmhBOgQ4dUDCA4&uact=5&oq=paris&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyDgguEIAEELEDEMcBEK8BMgUIABCABDIOCC4QgAQQsQMQxwEQrwEyFAguEIAEELEDEIMBEMcBEK8BENQCMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIHCC4QsQMQQzoLCC4QgAQQxwEQrwE6BwguENQCEEM6BAguEEM6CwgAEIAEELEDEIMBOggILhCxAxCDAToOCC4QgAQQsQMQxwEQowI6CgguEMcBEKMCEEM6DQguELEDEMcBENEDEEM6BAgAEEM6DgguEIAEELEDEMcBENEDOggIABCABBCxA0oECEEYAEoECEYYAFAAWMoDYIAHaABwAXgAgAGuAYgB9wSSAQMwLjWYAQCgAQHAAQE&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 330px" id="fotoParis" src="img/paris.jpg" alt="París" title="París" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=doha&rlz=1C1GCEB_enES995ES995&ei=XN4hYvbbFqGChbIPh5KTmAk&ved=0ahUKEwj2-dPZlKz2AhUhQUEAHQfJBJMQ4dUDCA4&uact=5&oq=doha&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyBQgAEIAEMgQIABBDMgcIABCABBAKMggILhCABBDUAjIFCAAQgAQyCwguEIAEEMcBEK8BMgUIABCABDIFCAAQgAQyBQgAEIAEOg4ILhCABBCxAxDHARCjAjoHCC4Q1AIQQzoOCC4QgAQQxwEQ0QMQ1AI6CAgAEIAEELEDOgsIABCABBCxAxCDAToHCAAQsQMQQzoKCC4QxwEQrwEQQzoKCAAQsQMQgwEQQzoNCC4QsQMQxwEQowIQQzoKCC4QxwEQ0QMQQzoLCC4QgAQQsQMQ1AI6CgguELEDENQCEEM6EQguEIAEELEDEIMBEMcBEK8BSgQIQRgASgQIRhgAUABYswhg0wpoAXABeACAAXyIAccEkgEDMC41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 350px" id="fotoDoha" src="img/doha.jpg" alt="Doha" title="Doha" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=cancun&rlz=1C1GCEB_enES995ES995&ei=Z94hYtr-NcrGgQb4vJ3wAw&ved=0ahUKEwiazpLflKz2AhVKY8AKHXheBz4Q4dUDCA4&uact=5&oq=cancun&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyDgguEIAEELEDEMcBEK8BMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQguEIAEMgUIABCABDIFCAAQgAQ6BwguENQCEEM6CwgAEIAEELEDEIMBOgsILhCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQowI6CAgAEIAEELEDOg4ILhCABBCxAxDHARCjAjoOCC4QgAQQsQMQxwEQ0QM6BggAEAoQQzoECAAQQzoICC4QsQMQgwE6CgguELEDENQCEEM6BAguEEM6CggAELEDEIMBEAo6CAguEIAEENQCOggIABCxAxCDAUoECEEYAEoECEYYAFAAWJkFYIcKaABwAXgAgAGWAYgBhQWSAQMzLjOYAQCgAQHAAQE&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 320px" id="fotoCancun" src="img/cancun.jpg" alt="Cancún" title="Cancún" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=el+cairo&rlz=1C1GCEB_enES995ES995&ei=c94hYqCYHc2QhbIP1JSvgAs&ved=0ahUKEwjgndbklKz2AhVNSEEAHVTKC7AQ4dUDCA4&uact=5&oq=el+cairo&gs_lcp=Cgdnd3Mtd2l6EAMyCwguEIAEELEDENQCMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgsIABCABBCxAxCDAToKCC4QxwEQ0QMQQzoLCC4QgAQQxwEQ0QM6DgguEIAEELEDEMcBENEDOgoIABCxAxCDARBDOgQIABBDOgcILhDUAhBDOgQILhBDOggIABCxAxCDAToLCC4QgAQQxwEQrwE6BQguELEDOgUILhCABEoECEEYAEoECEYYAFAAWKAIYIwMaABwAXgAgAGdAogBtAiSAQUxLjYuMZgBAKABAcABAQ&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 350px" id="fotoElCairo" src="img/el cairo.jpg" alt="El Cairo" title="El Cairo" /> </a> </td>
-            <td> <a href="https://www.google.com/search?q=madrid&rlz=1C1GCEB_enES995ES995&ei=fN4hYqKRAtTVgQbcjJ2QAg&ved=0ahUKEwiiv-DolKz2AhXUasAKHVxGByIQ4dUDCA4&uact=5&oq=madrid&gs_lcp=Cgdnd3Mtd2l6EAMyCgguELEDENQCEEMyBAgAEEMyBQgAEIAEMgoIABCxAxCDARBDMgsILhCABBDHARCvATIFCAAQgAQyCgguELEDENQCEEMyCAgAEIAEELEDMgQIABBDMgsIABCABBCxAxCDAToHCC4Q1AIQQzoECC4QQzoKCC4QsQMQgwEQQzoFCC4QsQM6BQguEIAEOgYIABAFEB5KBAhBGABKBAhGGABQAFi-DmDzD2gBcAF4AIABoAGIAeIGkgEDMC43mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
-                <img style="width: 300px" id="fotoMadrid" src="img/madrid.jpg" alt="Madrid" title="Madrid" /> </a> </td>
-        </tr>
-    </table>
+    <div class="reserva">
+        <form action="procesarPeticion.jsp" method="post">
+            <input class="box" type="text" name="Origen" placeholder="Origen" />
+            <input class="box" type="text" name="Destino" placeholder="Destino" />
+            <input class="date" type="date" name="Fecha" placeholder="Fecha" />
+            <div>
+                <input class="botton" type="submit" value="Buscar" />
+            </div>
+        </form>
+    </div>
 
+    <div class="cities">
+        <h2>Las 10 ciudades más populares</h2>
+        <table>
+            <tr>
+                <td> <a href="https://www.google.com/search?q=dubai&rlz=1C1GCEB_enES995ES995&oq=dubai&aqs=chrome.0.69i59j46i433i512j46i175i199i433i512j0i433j0i433i512l3j0i512l2j46i175i199i433i512.1839j0j7&sourceid=chrome&ie=UTF-8" target="_blank"> 
+                    <img class="dim" id="fotoDubai" src="img/dubai.jpg" alt="Dubai" title="Dubai" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=londres&rlz=1C1GCEB_enES995ES995&oq=londres&aqs=chrome.0.69i59j46i395i433i512j46i175i199i395i433i512j46i131i175i199i395i433i512j0i395i433i512j0i395i512j0i395i433i512j46i175i199i395i512j0i395i433i512j0i395i512.1095j1j7&sourceid=chrome&ie=UTF-8" target="_blank"> 
+                    <img class="dim"  id="fotoLondres" src="img/londres.jpg" alt="Londres" title="Londres" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=estambul&rlz=1C1GCEB_enES995ES995&ei=x90hYv-JFMzj7_UPs9O24A8&ved=0ahUKEwi_icuSlKz2AhXM8bsIHbOpDfwQ4dUDCA4&uact=5&oq=estambul&gs_lcp=Cgdnd3Mtd2l6EAMyCgguELEDENQCEEMyCgguELEDENQCEEMyCAgAEIAEELEDMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoECC4QQzoLCAAQgAQQsQMQgwE6BwguENQCEEM6CwguEIAEEMcBENEDOg4ILhCABBCxAxDHARDRAzoKCC4QsQMQgwEQQzoNCC4QsQMQgwEQ1AIQQzoECAAQQzoICAAQsQMQgwE6CgguEMcBEK8BEEM6CwguEIAEEMcBEK8BOgQIABADOggILhCABBCxAzoFCC4QgAQ6BQgAELEDSgQIQRgASgQIRhgAUABYzwlguRBoAHABeACAAX2IAcwGkgEDMy41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim"  id="fotoEstambul" src="img/estambul.jpg" alt="Estambul" title="Estambul" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=nueva+york&rlz=1C1GCEB_enES995ES995&ei=6t0hYtnJH73k7_UPkLWckAI&gs_ssp=eJzj4tTP1TcwijeyMDNg9OLKK00tS1SozC_KBgBIQQbJ&oq=nueva&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCC4QsQMQ1AIQQzIECC4QQzIICC4QgAQQsQMyCwguEIAEEMcBEK8BMgcILhCxAxBDMggIABCABBCxAzIFCAAQsQMyBQgAEIAEMggIABCxAxCDATIICAAQgAQQsQM6BQguEIAEOgsIABCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6EQguEIAEELEDEIMBEMcBEKMCOgsILhCABBCxAxCDAToOCC4QgAQQsQMQxwEQowI6BAgAEENKBAhBGABKBAhGGABQAFj5GGDOK2gAcAF4AIABkAGIAfsEkgEDMC41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim"  id="fotoNuevaYork" src="img/nueva_york.jpg" alt="Nueva York" title="Nueva York" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=miami&rlz=1C1GCEB_enES995ES995&ei=O94hYr36GtP6gAbStrioAg&ved=0ahUKEwj9g_rJlKz2AhVTPcAKHVIbDiUQ4dUDCA4&uact=5&oq=miami&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyBwguELEDEEMyBAguEEMyCwguEIAEELEDEIMBMgQIABBDMgQIABBDMgsILhCABBCxAxDUAjIICC4QgAQQsQMyFAguEIAEELEDEIMBEMcBEK8BENQCMgsILhCABBDHARCvAToHCC4Q1AIQQzoLCAAQgAQQsQMQgwE6BggAEAoQQzoQCC4QsQMQxwEQowIQ1AIQQzoKCAAQsQMQgwEQQzoICAAQgAQQsQNKBAhBGABKBAhGGABQAFiuBWDZEGgAcAF4AIABxwGIAeAFkgEDMC41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim"  id="fotoMiami" src="img/miami.jpg" alt="Miami" title="Miami" /> </a> </td>
+            </tr>
+
+            <tr>
+                <td> <a href="https://www.google.com/search?q=paris&rlz=1C1GCEB_enES995ES995&ei=R94hYsO3HYOV8gLZw5LADg&ved=0ahUKEwiD99jPlKz2AhWDilwKHdmhBOgQ4dUDCA4&uact=5&oq=paris&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyDgguEIAEELEDEMcBEK8BMgUIABCABDIOCC4QgAQQsQMQxwEQrwEyFAguEIAEELEDEIMBEMcBEK8BENQCMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIHCC4QsQMQQzoLCC4QgAQQxwEQrwE6BwguENQCEEM6BAguEEM6CwgAEIAEELEDEIMBOggILhCxAxCDAToOCC4QgAQQsQMQxwEQowI6CgguEMcBEKMCEEM6DQguELEDEMcBENEDEEM6BAgAEEM6DgguEIAEELEDEMcBENEDOggIABCABBCxA0oECEEYAEoECEYYAFAAWMoDYIAHaABwAXgAgAGuAYgB9wSSAQMwLjWYAQCgAQHAAQE&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim" id="fotoParis" src="img/paris.jpg" alt="París" title="París" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=doha&rlz=1C1GCEB_enES995ES995&ei=XN4hYvbbFqGChbIPh5KTmAk&ved=0ahUKEwj2-dPZlKz2AhUhQUEAHQfJBJMQ4dUDCA4&uact=5&oq=doha&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyBQgAEIAEMgQIABBDMgcIABCABBAKMggILhCABBDUAjIFCAAQgAQyCwguEIAEEMcBEK8BMgUIABCABDIFCAAQgAQyBQgAEIAEOg4ILhCABBCxAxDHARCjAjoHCC4Q1AIQQzoOCC4QgAQQxwEQ0QMQ1AI6CAgAEIAEELEDOgsIABCABBCxAxCDAToHCAAQsQMQQzoKCC4QxwEQrwEQQzoKCAAQsQMQgwEQQzoNCC4QsQMQxwEQowIQQzoKCC4QxwEQ0QMQQzoLCC4QgAQQsQMQ1AI6CgguELEDENQCEEM6EQguEIAEELEDEIMBEMcBEK8BSgQIQRgASgQIRhgAUABYswhg0wpoAXABeACAAXyIAccEkgEDMC41mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim" id="fotoDoha" src="img/doha.jpg" alt="Doha" title="Doha" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=cancun&rlz=1C1GCEB_enES995ES995&ei=Z94hYtr-NcrGgQb4vJ3wAw&ved=0ahUKEwiazpLflKz2AhVKY8AKHXheBz4Q4dUDCA4&uact=5&oq=cancun&gs_lcp=Cgdnd3Mtd2l6EAMyBwguELEDEEMyDgguEIAEELEDEMcBEK8BMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQguEIAEMgUIABCABDIFCAAQgAQ6BwguENQCEEM6CwgAEIAEELEDEIMBOgsILhCABBCxAxCDAToRCC4QgAQQsQMQgwEQxwEQowI6CAgAEIAEELEDOg4ILhCABBCxAxDHARCjAjoOCC4QgAQQsQMQxwEQ0QM6BggAEAoQQzoECAAQQzoICC4QsQMQgwE6CgguELEDENQCEEM6BAguEEM6CggAELEDEIMBEAo6CAguEIAEENQCOggIABCxAxCDAUoECEEYAEoECEYYAFAAWJkFYIcKaABwAXgAgAGWAYgBhQWSAQMzLjOYAQCgAQHAAQE&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim" id="fotoCancun" src="img/cancun.jpg" alt="Cancún" title="Cancún" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=el+cairo&rlz=1C1GCEB_enES995ES995&ei=c94hYqCYHc2QhbIP1JSvgAs&ved=0ahUKEwjgndbklKz2AhVNSEEAHVTKC7AQ4dUDCA4&uact=5&oq=el+cairo&gs_lcp=Cgdnd3Mtd2l6EAMyCwguEIAEELEDENQCMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgsIABCABBCxAxCDAToKCC4QxwEQ0QMQQzoLCC4QgAQQxwEQ0QM6DgguEIAEELEDEMcBENEDOgoIABCxAxCDARBDOgQIABBDOgcILhDUAhBDOgQILhBDOggIABCxAxCDAToLCC4QgAQQxwEQrwE6BQguELEDOgUILhCABEoECEEYAEoECEYYAFAAWKAIYIwMaABwAXgAgAGdAogBtAiSAQUxLjYuMZgBAKABAcABAQ&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim" id="fotoElCairo" src="img/el cairo.jpg" alt="El Cairo" title="El Cairo" /> </a> </td>
+                <td> <a href="https://www.google.com/search?q=madrid&rlz=1C1GCEB_enES995ES995&ei=fN4hYqKRAtTVgQbcjJ2QAg&ved=0ahUKEwiiv-DolKz2AhXUasAKHVxGByIQ4dUDCA4&uact=5&oq=madrid&gs_lcp=Cgdnd3Mtd2l6EAMyCgguELEDENQCEEMyBAgAEEMyBQgAEIAEMgoIABCxAxCDARBDMgsILhCABBDHARCvATIFCAAQgAQyCgguELEDENQCEEMyCAgAEIAEELEDMgQIABBDMgsIABCABBCxAxCDAToHCC4Q1AIQQzoECC4QQzoKCC4QsQMQgwEQQzoFCC4QsQM6BQguEIAEOgYIABAFEB5KBAhBGABKBAhGGABQAFi-DmDzD2gBcAF4AIABoAGIAeIGkgEDMC43mAEAoAEBwAEB&sclient=gws-wiz" target="_blank"> 
+                    <img class="dim" id="fotoMadrid" src="img/madrid.jpg" alt="Madrid" title="Madrid" /> </a> </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
