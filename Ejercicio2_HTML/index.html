@@ -11,24 +11,31 @@
 
 <body>
     <div class="header">
-        <a class="text" href="login.html">Log in</a>
+        <div class="divText">
+            <a class="text" href="login.html">Log in</a>
+        </div>
+        <div class="divIdioma">
+            <img class="idioma" id="fotoIdioma" src="img/globo.png" alt="Idioma" title="Cambiar idioma" />
+        </div>
     </div>
 
-    <div class="title">
-        <h1>Reserva tu viaje
-            <img class="avion" id="fotoAvion" src="img/avion.png" alt="Avión" />
-        </h1>
-    </div>
+    <div class="content">
+        <div class="title">
+            <h1>Reserva tu viaje
+                <img class="avion" id="fotoAvion" src="img/avion.png" alt="Avión" />
+            </h1>
+        </div>
 
-    <div class="reserva">
-        <form action="procesarPeticion.jsp" method="post">
-            <input class="box" type="text" name="Origen" placeholder="Origen" />
-            <input class="box" type="text" name="Destino" placeholder="Destino" />
-            <input class="date" type="date" name="Fecha" placeholder="Fecha" />
-            <div>
-                <input class="botton" type="submit" value="Buscar" />
-            </div>
-        </form>
+        <div class="reserva">
+            <form action="procesarPeticion.jsp" method="post">
+                <input class="box" type="text" name="Origen" placeholder="Origen" />
+                <input class="box" type="text" name="Destino" placeholder="Destino" />
+                <input class="date" type="date" name="Fecha" placeholder="Fecha" />
+                <div>
+                    <input class="botton" type="submit" value="Buscar" />
+                </div>
+            </form>
+        </div>
     </div>
 
     <div class="cities">
