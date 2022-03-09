@@ -14,16 +14,42 @@ body {
     font-size: 20px;
 }
 
+.divIdioma {
+    float:right;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.idioma {
+    width: 1em;
+    margin-right: 10px;
+} 
+
+.divText {
+    float:right;
+    margin-right: 40px;
+}
+
 .text {
-    padding-right: 3%;
     text-decoration: none;
     color: black;
+    margin-bottom: 50%;
+    background-color: white;
+    padding: 4px 15px 4px 15px;
+    border-radius: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+    z-index: 1;
 }
 
 .title {
     position: absolute;
     width: 100%;
-    top: 80px;
+    top: 100px;
     left: 0;
     z-index: 1;
     text-align: center;
@@ -31,6 +57,8 @@ body {
 
 .avion {
     width: 30px;
+    margin-left: 10px;
+    
 }
 
 .reserva {
