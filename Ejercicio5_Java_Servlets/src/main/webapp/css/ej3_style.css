@@ -1,0 +1,216 @@
+body {
+    background-color: white;
+}
+
+.top {
+    position: relative;
+    clear: both;
+    width: 90vw;
+    margin-left: 52px;
+    margin-bottom: 30px;
+}
+
+.photo {
+    position: relative;
+    float: left;
+    width: 20vw;
+    text-align: left;
+    font-size: 1.8vw;
+}
+
+.name {
+    position: relative;
+    float: left;
+    width: 64vw;
+    text-align: justify;
+    margin-left: 50px;
+    font-size: 2vw;
+}
+
+.bottom {
+    position: relative;
+    clear: both;
+    width: 90vw;
+    margin-left: 52px;
+    margin-bottom: 30px;
+}
+
+.left {
+    position: relative;
+    float: left;
+    background-color: #737373;
+    width: 20vw;
+    text-align: center;
+    color: black;
+    font-size: 2vw;
+}
+
+.right {
+    position: relative;
+    float: left;
+    width: 63vw;
+    margin-left: 50px;
+    color: black;
+    text-align: justify;
+    font-size: 2vw;
+}
+
+.fotoCV {
+    width: 100%;
+}
+
+.h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.rightLine {
+    border-radius: 10%;
+}
+
+.resume {
+    font-size: 2vw;
+    text-align: justify;
+    margin-top: 30px;
+}
+
+.h3 {
+   font-size: 18px;
+   margin-top: 25%; 
+}
+
+.leftLine {
+    color: black;
+    border-radius: 10%;
+    width: 75%;
+}
+
+.perfil {
+    font-size: 14px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+}
+
+.email {
+    font-size: 1.7vw;
+}
+
+.iconos {
+    width: 14%;
+    margin-top: 10%;
+}
+
+.h4 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.li {
+    color: #505050;
+}
+
+.h5 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 13px;
+    margin-bottom: 8px;
+}
+
+.h6 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* Pantalla pequeña de un navegador */
+@media screen and (max-width: 843px) {
+    .top {
+        margin-left: 25px;
+    }
+
+    .photo {
+        position: absolute;
+        margin-left: 0px;
+        text-align: left;
+    }
+    
+    .name {
+        position: absolute;
+        left: 25%;
+        width: auto;
+        margin-left: 0;
+        margin-right: 25px;
+    }
+
+    .resume {
+        margin-top: 13px;
+    }
+    
+    .bottom {
+        position: relative;
+        top: 40vw;
+        margin-left: 25px;
+    }
+    
+    .right {
+        position: absolute;
+        left: 25%;
+        margin-left: 0;
+        margin-right: 25px;
+    }
+
+    .perfil {
+        font-size: 2vw;
+    }
+
+    .black {
+        font-size: 2vw;
+    }
+
+    .end {
+        font-size: 2vw;
+        margin-bottom: 20px;
+    }
+}
+
+/* Pantalla de dispositivo móvil con orientación portrait */
+@media screen and (max-width: 499px) {
+    .perfil {
+        font-size: 2vw;
+    }
+
+    .black {
+        font-size: 2vw;
+    }
+
+    .email {
+        font-size: 1.4vw;
+    }
+
+    .end {
+        font-size: 2vw;
+        margin-bottom: 40px;
+    }
+}
+
+/* Pantalla de dispositivo móvil con orientación la */
+@media screen and (orientation: landscape) {
+    .perfil {
+        font-size: 1.8vw;
+    }
+
+    .black {
+        font-size: 1.8vw;
+    }
+
+    .email {
+        font-size: 1.4vw;
+    }
+
+    .end {
+        font-size: 1.8vw;
+        margin-bottom: 60px;
+    }
+}

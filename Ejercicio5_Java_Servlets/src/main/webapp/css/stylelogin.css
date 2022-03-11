@@ -1,0 +1,90 @@
+body {
+    background-color: #ffffff;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+}
+
+.borde {
+    margin-top: 42px;
+    width: 300px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    background-color: #a1968c;
+}
+
+.usuario {
+    display: block;
+    margin: auto;
+    width:80px;
+    height:80px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius:150px;
+    border-color: black;
+    background-color: white;
+}
+
+.login {
+    align-items: center;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    display: block;
+}
+
+.boxU {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.boxP {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.buttonR {
+	display: flex;
+	margin-left: 6px;
+}
+
+.remember {
+	font-size: 14px;
+}
+
+.buttonLog {
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.texto {
+    align-items: center;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.divRegistro {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonRegistro {
+    padding: 8px;
+    border-radius: 5px;
+}
