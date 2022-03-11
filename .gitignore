@@ -23,6 +23,3 @@ local.properties
 *.zip
 *.tar.gz
 *.rar
-
-#Folders
-WsLMSGI/
