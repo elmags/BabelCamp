@@ -1,0 +1,22 @@
+.top {
+    position: relative;
+    clear: both;
+    width: 90vw;
+    margin-left: 52px;
+    margin-bottom: 30px;
+}
+
+.bottom {
+    position: relative;
+    clear: both;
+    width: 90vw;
+    margin-left: 52px;
+    margin-bottom: 30px;
+}
+
+/* Pantalla pequeña de un navegador */
+@media screen and (max-width: 843px) {
+    .top {
+        margin-left: 25px;
+    }
+}

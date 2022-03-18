@@ -1,0 +1,73 @@
+.photo {
+    position: relative;
+    float: left;
+    width: 20vw;
+    text-align: left;
+    font-size: 1.8vw;
+}
+
+.name {
+    position: relative;
+    float: left;
+    width: 64vw;
+    text-align: justify;
+    margin-left: 50px;
+    font-size: 2vw;
+}
+
+.fotoCV {
+    width: 100%;
+}
+
+.h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.rightLine {
+    border-radius: 10%;
+}
+
+.resume {
+    font-size: 2vw;
+    text-align: justify;
+    margin-top: 30px;
+}
+
+/* Pantalla pequeña de un navegador */
+@media screen and (max-width: 843px) {
+    .photo {
+        position: absolute;
+        margin-left: 0px;
+        text-align: left;
+    }
+    
+    .name {
+        position: absolute;
+        left: 25%;
+        width: auto;
+        margin-left: 0;
+        margin-right: 25px;
+    }
+
+    .resume {
+        margin-top: 13px;
+    }
+    .perfil {
+        font-size: 2vw;
+    }
+}
+
+/* Pantalla de dispositivo móvil con orientación portrait */
+@media screen and (max-width: 499px) {
+    .perfil {
+        font-size: 2vw;
+    }
+}
+
+/* Pantalla de dispositivo móvil con orientación la */
+@media screen and (orientation: landscape) {
+    .perfil {
+        font-size: 1.8vw;
+    }
+}
