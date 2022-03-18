@@ -1,0 +1,9 @@
+.calculadora {
+    padding: 25px;
+    padding-top: 30px;
+    margin-top: 50px;
+    border-width: 5px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(73, 73, 156);
+}

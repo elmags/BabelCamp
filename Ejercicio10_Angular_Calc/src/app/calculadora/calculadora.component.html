@@ -1,0 +1,25 @@
+<div class="resultado" *ngIf="!finCalc; else mostrarRes">
+    <input class="res" disabled value={{numero1}}{{op}}{{numero2}} />
+</div>
+<ng-template #mostrarRes>
+    <div class="resultado">
+        <input class="res" disabled value={{res}} />
+    </div>
+</ng-template>
+
+Introduce un número: <input class="rect" [(ngModel)]="numero1" /> 
+
+<div class="botones">
+    <button class="button" (click)="suma()">+</button>
+    <button class="button" (click)="resta()">-</button>
+    <button class="button" (click)="multiplicacion()">X</button>
+    <button class="button" (click)="division()">/</button>
+</div>
+
+Introduce un segundo número: <input class="rect" [(ngModel)]="numero2" />
+
+<div class="botonRes">
+    <button class="buttonAC" (click)="allClear()">AC</button>
+    <button class="buttonRes" (click)="resultado()">=</button>
+</div>
+
