@@ -1,0 +1,18 @@
+<div class="content" >
+    <div class="borde">
+        <div>
+            <img class="usuario" id="fotoUsuario" src="assets/user.png" alt="Usuario" />
+        </div>
+
+        <div class="login">
+            <form>
+                <input class="boxU" type="text" name="username" placeholder="Nombre de usuario" [(ngModel)]="username" />	
+                <input class="boxP" type="password" name="passwd" placeholder="Contraseña" [(ngModel)]="password" />
+                <div class="buttonR">
+                    <input class="remember" type="checkbox" value="Recordar_usuario"/>Recordar usuario
+                </div>
+                <input class="buttonLog" type="submit" value="Entrar" (click)="administrarErrores()" /> 
+            </form>
+        </div>
+    </div>
+</div>
