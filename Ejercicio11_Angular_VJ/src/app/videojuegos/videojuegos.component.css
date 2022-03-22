@@ -1,8 +1,30 @@
+.formulario {
+    padding: 25px;
+    padding-top: 30px;
+    margin-top: 50px;
+    border-width: 4px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    background-color: #a1968c;
+}
+
 .rect {
     height: 30px;
     border-width: 1.2px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
+    border-color: black;
+    margin-bottom: 5px;
+}
+
+.error {
+    height: 30px;
+    border-width: 3px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border-color: red;
+    margin-bottom: 5px;
 }
 
 .botones {
@@ -22,4 +44,45 @@
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
 }
-/* background-color: rgb(214, 213, 213); */
+
+.modificar {
+    width: 170px;
+    height: 40px;
+    margin-right: 20px;
+    border-width: 1.2px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+.tabla {
+    padding: 25px;
+    padding-top: 30px;
+    margin-top: 50px;
+    border-width: 4px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    background-color: #a1968c;
+    text-align: right;
+}
+
+th {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.margen {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.iconoEliminar {
+    width:25px;
+    cursor: pointer;
+}
+
+.iconoEditar {
+    width:20px;
+    cursor: pointer;
+}

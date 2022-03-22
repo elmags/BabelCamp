@@ -1,22 +1,45 @@
-<div>
-    ID: <input class="rect" value="" disabled/> 
+<div class="formulario">
+    <div>
+        ID: <input class="rect" type="number" [(ngModel)]="id" disabled /> 
+    </div>
+
+    <div>
+        Título: <input class="rect" *ngIf="!errorTitulo" [(ngModel)]="titulo" value="" />
+        <input class="error" *ngIf="errorTitulo" type="text" value="" placeholder="Debe rellenar este campo" [(ngModel)]="titulo" /> 
+    </div>
+
+    <div >
+        Compañia: <input class="rect" *ngIf="!errorCompania" [(ngModel)]="compania" />
+        <input class="error" *ngIf="errorCompania" type="text" value="" placeholder="Debe rellenar este campo" [(ngModel)]="compania" /> 
+    </div>
+
+    <div>
+        Valoración media: <input class="rect" *ngIf="!errorVal" type="number" [(ngModel)]="val_media" /> 
+    </div>
+
+    <div class="botones">
+        <button class="modificar" (click)="modificar_aux()">Modificar videojuegos</button>
+        <button class="button" *ngIf="!_guardar" (click)="alta()" >Añadir</button>
+        <button class="button" *ngIf="_guardar" (click)="guardar()" >Guardar</button>
+        <button class="button" (click)="allClear()">Vaciar</button>
+    </div>
 </div>
 
-<div>
-    Título: <input class="rect" value="" disabled/> 
-</div>
-
-<div>
-    Compañia: <input class="rect" value="" disabled/> 
-</div>
-
-<div>
-    Valoración media: <input class="rect" value="" disabled/> 
-</div>
-
-<div class="botones">
-    <button class="button" (click)="alta()">Añadir</button>
-    <button class="button" (click)="allClear()">Vaciar</button>
-    <!-- <button class="button" (click)="multiplicacion()">X</button>
-    <button class="button" (click)="division()">/</button> -->
+<div class="tabla">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Compañia</th>
+            <th>Valoración media</th>
+        </tr>
+        <tr *ngFor="let vj of videojuegos">
+            <td class="margen"> {{vj.id}} </td>
+            <td class="margen"> {{vj.titulo}} </td>
+            <td class="margen"> {{vj.compania}} </td>
+            <td class="margen"> {{vj.val_media}} </td>
+            <td class="margen" *ngIf="_modificar"> <img class="iconoEliminar" src="assets/borrar.png" alt="Eliminar" (click)="baja(vj)"> </td>
+            <td *ngIf="_modificar"> <img class="iconoEditar" src="assets/lapiz.png" alt="Editar" (click)="modificar(vj)"> </td>
+        </tr>
+    </table>
 </div>
