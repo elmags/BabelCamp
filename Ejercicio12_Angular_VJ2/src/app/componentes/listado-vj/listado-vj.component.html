@@ -1,1 +1,19 @@
-<p>listado-vj works!</p>
+<app-cabecera></app-cabecera>
+<div class="content">
+    <div class="tabla">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Imagen</th>
+            </tr>
+            <tr *ngFor="let vj of videojuegos.videojuegos" (click)="detalles(vj)">
+                <td class="margen"> {{vj.id}} </td>
+                <td class="titulo"> {{vj.titulo}} </td>
+                <td class="margen"> <img class="imagen" src=" {{vj.imageSRC}} "></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

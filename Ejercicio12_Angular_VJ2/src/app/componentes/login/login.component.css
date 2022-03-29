@@ -9,7 +9,6 @@ body {
 }
 
 .borde {
-    margin-top: 42px;
     width: 300px;
     padding-bottom: 25px;
     padding-top: 25px;
@@ -32,11 +31,22 @@ body {
     background-color: white;
 }
 
+.errores {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
 .login {
     align-items: center;
-    padding-top: 40px;
     display: flex;
     justify-content: center;
+    justify-items: center;
 }
 
 input {
@@ -46,22 +56,13 @@ input {
 .boxU {
     padding: 10px;
     border-radius: 20px;
-    margin-bottom: 20px;
 }
 
 .boxP {
     padding: 10px;
     border-radius: 20px;
+    margin-top: 20px;
     margin-bottom: 5px;
-}
-
-.buttonR {
-	display: flex;
-	margin-left: 6px;
-}
-
-.remember {
-	font-size: 14px;
 }
 
 .buttonLog {

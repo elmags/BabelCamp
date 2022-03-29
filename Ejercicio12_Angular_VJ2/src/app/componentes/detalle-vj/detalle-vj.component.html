@@ -1,0 +1,21 @@
+<app-cabecera></app-cabecera>
+<div class="content">
+    <div class="tabla">
+        <table>
+            <tr><td colspan="3" class="titulo"><h1>Detalles {{videojuego.titulo}} </h1> </td></tr>
+            <tr>
+                <th class="Columna">ID</th>
+                <td class="margen"> {{videojuego.id}} </td> 
+                <td rowspan="4" > <a href=" {{videojuego.imageSRC}} " target="_blank"> <img class="imagenVj" id="imagenVj" src= {{videojuego.imageSRC}} alt= {{videojuego.titulo}} /> </a> </td></tr>
+            <tr>    
+                <th class="Columna">Título</th>
+                <td class="margen"> {{videojuego.titulo}} </td> </tr>
+            <tr>
+                <th class="Columna">Compañia</th>
+                <td class="margen"> {{videojuego.compania}} </td> </tr>
+            <tr>
+                <th class="Columna">Val_media</th>
+                <td class="margen"> {{videojuego.val_media}} </td> </tr>
+        </table>
+    </div>
+</div>

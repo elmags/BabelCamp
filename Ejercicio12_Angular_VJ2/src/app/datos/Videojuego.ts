@@ -3,16 +3,16 @@ export class Videojuego {
     private _titulo: string;
     private _compania: string;
     private _val_media: number;
-    private _image: HTMLImageElement;
+    private _imageSRC: string;
 
     // private _idInicial = 1;
 
-    constructor(_titulo: string, _compania: string, _val_media: number, _image: HTMLImageElement) {
+    constructor(_titulo: string, _compania: string, _val_media: number, _imageSRC: string) {
         this._id = 0;
         this._titulo = _titulo;
         this._compania = _compania;
         this._val_media = _val_media;
-        this._image = _image;
+        this._imageSRC = _imageSRC;
     }
 
     public get id(): number {
@@ -44,5 +44,12 @@ export class Videojuego {
     public set val_media(val_media: number) {
         this._val_media = val_media;
     }
-   
+
+    public get imageSRC(): string {
+        return this._imageSRC;
+    }
+
+    public set imageSRC(imageSRC: string) {
+        this._imageSRC = imageSRC;
+    }
 }

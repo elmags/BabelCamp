@@ -6,18 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ListadoVJComponent } from './componentes/listado-vj/listado-vj.component';
-import { InicioComponent } from './componentes/inicio/inicio.component';
-import { PieDePaginaComponent } from './componentes/pie-de-pagina/pie-de-pagina.component';
-import { MenuComponent } from './componentes/menu/menu.component';
+import { InfUsComponent } from './componentes/inf-us/inf-us.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
+import { DetalleVjComponent } from './componentes/detalle-vj/detalle-vj.component';
+import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ListadoVJComponent,
-    InicioComponent,
-    PieDePaginaComponent,
-    MenuComponent
+    InfUsComponent,
+    ContactoComponent,
+    DetalleVjComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,

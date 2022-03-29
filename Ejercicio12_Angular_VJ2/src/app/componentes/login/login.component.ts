@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../../datos/Usuario';
 import { Usuarios } from '../../datos/Usuarios';
-import { Videojuego } from '../../datos/Videojuego';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +13,7 @@ export class LoginComponent implements OnInit {
   usuarios: Usuarios;
 
   usuarioValidado: boolean = false;
-  error: number;
+  error: number | null;
 
   // variables para los errores posibles
   error1: boolean = false;
@@ -28,9 +27,10 @@ export class LoginComponent implements OnInit {
   password = "";
 
   constructor(private router: Router) {
-    this.error = 0;
+    this.error = null;
 
     this.usuarios = new Usuarios();
+    console.log("Path: ", window.location.href);
   }
 
   ngOnInit(): void {
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
    * Comprueba que el nombre de usuario y la contraseña estén en la lista de usuarios válidos.
    * @returns 
    *          - Si el nombre y la contraseña coinciden con un usuario de la lista devuelve 4.
-   *          - Si el nombre no existe en la lista devuelve 5.
-   *          - Si el usuario ha introducido la contraseña mal devuelve 6.
+   *          - Si el usuario ha introducido la contraseña mal devuelve 5.
+   *          - Si el nombre no existe en la lista devuelve 6.
    *          - Si no se cumple ninguna de las anteriores devuelve el valor de mostrarError().
    */
   public login(): number | any {
@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
       for (let user of this.usuarios.usuarios) {
         if (user.username == this.username && user.password == this.password) {
           this.usuarioValidado = true;
+          sessionStorage.setItem("username", this.username);
           return 4;
         }
         else if (user.username == this.username) return 5;
@@ -77,7 +78,7 @@ export class LoginComponent implements OnInit {
    *          - Si el usuario no ha introducido el nombre, pero la contraseña sí, devuelve 2.
    *          - Si el usuario no ha introducido la contraseña, pero el nombre sí, devuelve 3. 
    */
-  public mostrarError(): number {
+   public mostrarError(): number {
     if (this.username == "" && this.password == "") return 1;
     else if (this.username == "") return 2;
     else if (this.password == "") return 3;

@@ -5,12 +5,16 @@ export class Usuarios {
 	private _usuarios: Array<Usuario>;
 
 	constructor() {
-		let u1: Usuario = new Usuario("username1", "passwd1");
-		let u2: Usuario = new Usuario("username2", "passwd2");
-		let u3: Usuario = new Usuario("username3", "passwd3");
-		
 		this._usuarios = [];
-		this._usuarios.push(u1, u2, u3);
+		
+		let u1: Usuario = new Usuario("username1", "passwd1");
+		this._usuarios.push(u1);
+
+		u1 = new Usuario("username2", "passwd2");
+		this._usuarios.push(u1);
+
+		u1 = new Usuario("username3", "passwd3");
+		this._usuarios.push(u1);
 	}
 
 	public get usuarios(): Array<Usuario> {
