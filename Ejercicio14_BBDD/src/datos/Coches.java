@@ -10,6 +10,10 @@ public class Coches {
 	public Coches() {
 		coches = new ArrayList<>();
 	}
+	
+	public void addCoche(Coche coche) {
+		this.coches.add(coche);
+	}
 
 	public List<Coche> getCoches() {
 		return coches;

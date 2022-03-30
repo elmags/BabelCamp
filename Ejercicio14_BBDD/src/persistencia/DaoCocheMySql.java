@@ -3,10 +3,12 @@ package persistencia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 import datos.Coche;
+import datos.Coches;
 import peristencia.interfaces.DaoCoche;
 
 public class DaoCocheMySql implements DaoCoche {
@@ -99,40 +101,124 @@ public class DaoCocheMySql implements DaoCoche {
 
 	@Override
 	public Coche buscar(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		conn = conectarConBBDD();
+		Coche coche = null;
+		if (conn != null) {
+			try {
+			String sql = "SELECT * FROM coches WHERE id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) coche = cocheFromRS(rs);
+			
+			} catch (SQLException e) {
+				System.out.println("No se pudo encontrar el coche");
+				e.printStackTrace();
+			}
+		}
+		cerrarConn();
+		return coche;
 	}
 
 
 
 	@Override
 	public Coche buscar_matricula(String matricula) {
-		// TODO Auto-generated method stub
-		return null;
+		conn = conectarConBBDD();
+		Coche coche = null;
+		if (conn != null) {
+			try {
+			String sql = "SELECT * FROM coches WHERE matricula = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, matricula);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) coche = cocheFromRS(rs);
+			
+			} catch (SQLException e) {
+				System.out.println("No se pudo encontrar el coche");
+				e.printStackTrace();
+			}
+		}
+		cerrarConn();
+		return coche;
 	}
 
 
 
 	@Override
 	public Coche buscar_marca(String marca) {
-		// TODO Auto-generated method stub
-		return null;
+		conn = conectarConBBDD();
+		Coche coche = null;
+		if (conn != null) {
+			try {
+			String sql = "SELECT * FROM coches WHERE marca = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, marca);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) coche = cocheFromRS(rs);
+			
+			} catch (SQLException e) {
+				System.out.println("No se pudo encontrar el coche");
+				e.printStackTrace();
+			}
+		}
+		cerrarConn();
+		return coche;
 	}
 
 
 
 	@Override
 	public Coche buscar_modelo(String modelo) {
-		// TODO Auto-generated method stub
-		return null;
+		conn = conectarConBBDD();
+		Coche coche = null;
+		if (conn != null) {
+			try {
+			String sql = "SELECT * FROM coches WHERE modelo = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, modelo);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) coche = cocheFromRS(rs);
+			
+			} catch (SQLException e) {
+				System.out.println("No se pudo encontrar el coche");
+				e.printStackTrace();
+			}
+		}
+		cerrarConn();
+		return coche;
 	}
 
 
 
 	@Override
-	public List<Coche> get() {
-		// TODO Auto-generated method stub
-		return null;
+	public Coches get() {
+		conn = conectarConBBDD();
+		Coches coches = new Coches();
+		if (conn != null) {
+			try {
+			String sql = "SELECT * FROM coches";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			Coche coche;
+			
+			while (rs.next()) {
+				coche = cocheFromRS(rs);
+				coches.addCoche(coche);
+			}			
+			
+			} catch (SQLException e) {
+				System.out.println("No se pudo encontrar el coche");
+				e.printStackTrace();
+			}
+		}
+		cerrarConn();
+		return coches;
 	}
 	
 	private Connection conectarConBBDD() {
@@ -149,11 +235,17 @@ public class DaoCocheMySql implements DaoCoche {
 		return conn;
 	}
 	
-	public void cerrarConn() {
+	private void cerrarConn() {
 		try {
 			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private Coche cocheFromRS(ResultSet rs) throws SQLException {
+		Coche coche = new Coche(rs.getString("matricula"), rs.getString("marca"), rs.getString("modelo"), rs.getDouble("kilometros"));
+		coche.setId(rs.getInt("id"));
+		return coche;
 	}
 }

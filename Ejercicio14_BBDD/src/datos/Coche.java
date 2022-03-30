@@ -8,8 +8,6 @@ public class Coche {
 	private String modelo;
 	private double km;
 	
-	public Coche() {}
-	
 	public Coche(String matricula, String marca, String modelo, double km) {
 		this.matricula = matricula;
 		this.marca = marca;
