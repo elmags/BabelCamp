@@ -54,4 +54,10 @@ public class Coche {
 	public void setKm(double km) {
 		this.km = km;
 	}
+
+	@Override
+	public String toString() {
+		return "Coche [id=" + id + ", matricula=" + matricula + ", marca=" + marca + 
+				", modelo=" + modelo + ", km=" + km + "]";
+	}
 }

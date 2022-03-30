@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 import datos.Coche;
 import datos.Coches;
@@ -39,8 +38,8 @@ public class DaoCocheMySql implements DaoCoche {
 				e.printStackTrace();
 				creado = false;
 			}
+			cerrarConn();
 		}
-		cerrarConn();
 		return creado;
 	}
 
@@ -64,8 +63,8 @@ public class DaoCocheMySql implements DaoCoche {
 				e.printStackTrace();
 				borrado = false;
 			}
+			cerrarConn();
 		}
-		cerrarConn();
 		return borrado;
 	}
 
@@ -90,10 +89,11 @@ public class DaoCocheMySql implements DaoCoche {
 			}
 			
 			} catch (SQLException e) {
-				System.out.println("No se pudo eliminar el coche");
+				System.out.println("No se pudo modificar el coche");
 				e.printStackTrace();
 				modificado = false;
 			}
+			cerrarConn();
 		}
 		cerrarConn();
 		return modificado;
@@ -111,17 +111,16 @@ public class DaoCocheMySql implements DaoCoche {
 			ResultSet rs = ps.executeQuery();
 			
 			if (rs.next()) coche = cocheFromRS(rs);
+			else System.out.println("El coche con id " + id + " no se ha encontrado");
 			
 			} catch (SQLException e) {
 				System.out.println("No se pudo encontrar el coche");
 				e.printStackTrace();
 			}
+			cerrarConn();
 		}
-		cerrarConn();
 		return coche;
 	}
-
-
 
 	@Override
 	public Coche buscar_matricula(String matricula) {
@@ -135,22 +134,21 @@ public class DaoCocheMySql implements DaoCoche {
 			ResultSet rs = ps.executeQuery();
 			
 			if (rs.next()) coche = cocheFromRS(rs);
+			else System.out.println("El coche con matrícula " + matricula + " no se ha encontrado");
 			
 			} catch (SQLException e) {
 				System.out.println("No se pudo encontrar el coche");
 				e.printStackTrace();
 			}
+			cerrarConn();
 		}
-		cerrarConn();
 		return coche;
 	}
 
-
-
 	@Override
-	public Coche buscar_marca(String marca) {
+	public Coches buscar_marca(String marca) {
 		conn = conectarConBBDD();
-		Coche coche = null;
+		Coches coches = new Coches();
 		if (conn != null) {
 			try {
 			String sql = "SELECT * FROM coches WHERE marca = ?";
@@ -158,23 +156,25 @@ public class DaoCocheMySql implements DaoCoche {
 			ps.setString(1, marca);
 			ResultSet rs = ps.executeQuery();
 			
-			if (rs.next()) coche = cocheFromRS(rs);
+			Coche coche;
+			while (rs.next()) {
+				coche = cocheFromRS(rs);
+				coches.addCoche(coche);
+			}	
 			
 			} catch (SQLException e) {
 				System.out.println("No se pudo encontrar el coche");
 				e.printStackTrace();
 			}
+			cerrarConn();
 		}
-		cerrarConn();
-		return coche;
+		return coches;
 	}
-
-
-
+	
 	@Override
-	public Coche buscar_modelo(String modelo) {
+	public Coches buscar_modelo(String modelo) {
 		conn = conectarConBBDD();
-		Coche coche = null;
+		Coches coches = new Coches();
 		if (conn != null) {
 			try {
 			String sql = "SELECT * FROM coches WHERE modelo = ?";
@@ -182,19 +182,21 @@ public class DaoCocheMySql implements DaoCoche {
 			ps.setString(1, modelo);
 			ResultSet rs = ps.executeQuery();
 			
-			if (rs.next()) coche = cocheFromRS(rs);
+			Coche coche;
+			while (rs.next()) {
+				coche = cocheFromRS(rs);
+				coches.addCoche(coche);
+			}	
 			
 			} catch (SQLException e) {
 				System.out.println("No se pudo encontrar el coche");
 				e.printStackTrace();
 			}
+			cerrarConn();
 		}
-		cerrarConn();
-		return coche;
+		return coches;
 	}
-
-
-
+	
 	@Override
 	public Coches get() {
 		conn = conectarConBBDD();
@@ -206,18 +208,17 @@ public class DaoCocheMySql implements DaoCoche {
 			ResultSet rs = ps.executeQuery();
 			
 			Coche coche;
-			
 			while (rs.next()) {
 				coche = cocheFromRS(rs);
 				coches.addCoche(coche);
 			}			
 			
 			} catch (SQLException e) {
-				System.out.println("No se pudo encontrar el coche");
+				System.out.println("No se pudo obtener la lista de coches");
 				e.printStackTrace();
 			}
+			cerrarConn();
 		}
-		cerrarConn();
 		return coches;
 	}
 	
