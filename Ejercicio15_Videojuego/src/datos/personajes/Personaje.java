@@ -1,9 +1,6 @@
 package datos.personajes;
 
-import datos.armas.Arco;
 import datos.armas.Arma;
-import datos.armas.Espada;
-import datos.armas.Hechizo;
 
 public abstract class Personaje {
 	

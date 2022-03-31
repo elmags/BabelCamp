@@ -28,6 +28,9 @@ public class Curandero extends Personaje {
 		}
 		else if (arma instanceof Rezo) {
 			daño_real = arma.getDaño() + this.sabiduria;
+			setVida(getVida() + 5);
+			System.out.println("El personaje " + getNombre() + " se ha curado 5 puntos de vida por ser " + 
+					getTipo() + " y utilizar " + arma.getTipo());
 		}
 		p.setVida(p.getVida() - daño_real);
 		return daño_real;

@@ -9,9 +9,11 @@ import datos.armas.Rezo;
 public class Guerrero extends Personaje {
 
 	private int fuerza;
+	private boolean bloqueado;
 	
 	public Guerrero () {
 		this.fuerza = 5;
+		this.bloqueado = false;
 	}
 	
 	@Override
@@ -19,6 +21,7 @@ public class Guerrero extends Personaje {
 		int daño_real = 0;
 		if (arma instanceof Espada) {
 			daño_real = arma.getDaño() + this.fuerza;
+			if(Math.random() <= 1) this.bloqueado = true;
 		}
 		else if (arma instanceof Arco) {
 			daño_real = arma.getDaño() + this.fuerza;
@@ -39,5 +42,13 @@ public class Guerrero extends Personaje {
 
 	public void setFuerza(int fuerza) {
 		this.fuerza = fuerza;
+	}
+
+	public boolean isBloqueado() {
+		return bloqueado;
+	}
+
+	public void setBloqueado(boolean bloqueado) {
+		this.bloqueado = bloqueado;
 	}
 }
