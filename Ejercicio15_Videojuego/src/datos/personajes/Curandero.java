@@ -33,12 +33,13 @@ public class Curandero extends Personaje {
 					getTipo() + " y utilizar " + arma.getTipo() + ", ahora tiene " + getVida() + " puntos de vida");
 		}
 		
-		if (p instanceof Guerrero && p.getArma() instanceof Espada)
+		if ((p.getArma() instanceof Espada) && (p instanceof Guerrero)) {
 			((Guerrero) p).setBloqueado(false);
 			if(Math.random() <= 0.35) {
 				((Guerrero) p).setBloqueado(true);
-				daño_real = 0;
+				return 0;
 			}
+		}
 		
 		p.setVida(p.getVida() - daño_real);
 		return daño_real;

@@ -23,7 +23,13 @@ public class Guerrero extends Personaje {
 			daño_real = arma.getDaño() + this.fuerza;
 		}
 		else if (arma instanceof Arco) {
-			daño_real = arma.getDaño() + this.fuerza;
+			daño_real = arma.getDaño();
+			// Probabilidad del 20% de lanzar 2 flechas
+			if(Math.random() <= 0.2) {
+				System.out.println("El personaje " + getNombre() + " utiliza 2 flechas. Hace el doble de daño");
+				daño_real *= 2;
+			}
+			daño_real += this.fuerza;
 		}
 		else if (arma instanceof Hechizo) {
 			daño_real = arma.getDaño();

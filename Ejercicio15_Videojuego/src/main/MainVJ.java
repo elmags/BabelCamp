@@ -8,13 +8,13 @@ public class MainVJ {
 
 	public static void main(String[] args) {
 		
-		Personaje p1 = new Curandero();
+		Personaje p1 = pers_rand();
 		p1.setNombre("P1");
-		p1.setArma(new Rezo());
+		p1.setArma(arma_rand());
 		
-		Personaje p2 = new Guerrero();
+		Personaje p2 = pers_rand();
 		p2.setNombre("P2");
-		p2.setArma(new Espada());
+		p2.setArma(arma_rand());
 		
 		System.out.println("*************** BATALLA ***************");
 		System.out.println("Personaje 1: " + p1.getNombre() + " es " + p1.getTipo() + " tiene " + p1.getArma().getTipo());
