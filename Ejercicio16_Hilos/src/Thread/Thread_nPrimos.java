@@ -10,7 +10,7 @@ public class Thread_nPrimos implements Runnable {
 	
 	@Override
 	public void run() {
-		System.out.println(esPrimo(numero));
+		System.out.println(Thread.currentThread().getName() + ": " + esPrimo(numero));
 	}
 	
 	private boolean existeDivisor (int a, int b, int n) {
