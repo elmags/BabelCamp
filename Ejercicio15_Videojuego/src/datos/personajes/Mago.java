@@ -25,6 +25,14 @@ public class Mago extends Personaje{
 		else if (arma instanceof Rezo) {
 			daño_real = arma.getDaño();
 		}
+		
+		if (p instanceof Guerrero && p.getArma() instanceof Espada)
+			((Guerrero) p).setBloqueado(false);
+			if(Math.random() <= 0.35) {
+				((Guerrero) p).setBloqueado(true);
+				return 0;
+			}
+		
 		p.setVida(p.getVida() - daño_real);
 		return daño_real;
 	}

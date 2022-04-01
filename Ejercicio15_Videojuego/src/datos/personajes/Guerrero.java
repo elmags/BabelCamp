@@ -21,7 +21,6 @@ public class Guerrero extends Personaje {
 		int daño_real = 0;
 		if (arma instanceof Espada) {
 			daño_real = arma.getDaño() + this.fuerza;
-			if(Math.random() <= 1) this.bloqueado = true;
 		}
 		else if (arma instanceof Arco) {
 			daño_real = arma.getDaño() + this.fuerza;

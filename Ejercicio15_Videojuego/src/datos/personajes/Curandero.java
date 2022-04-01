@@ -30,8 +30,16 @@ public class Curandero extends Personaje {
 			daño_real = arma.getDaño() + this.sabiduria;
 			setVida(getVida() + 5);
 			System.out.println("El personaje " + getNombre() + " se ha curado 5 puntos de vida por ser " + 
-					getTipo() + " y utilizar " + arma.getTipo());
+					getTipo() + " y utilizar " + arma.getTipo() + ", ahora tiene " + getVida() + " puntos de vida");
 		}
+		
+		if (p instanceof Guerrero && p.getArma() instanceof Espada)
+			((Guerrero) p).setBloqueado(false);
+			if(Math.random() <= 0.35) {
+				((Guerrero) p).setBloqueado(true);
+				daño_real = 0;
+			}
+		
 		p.setVida(p.getVida() - daño_real);
 		return daño_real;
 	}
