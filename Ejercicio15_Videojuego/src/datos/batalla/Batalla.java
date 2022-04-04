@@ -46,4 +46,11 @@ public class Batalla {
 			if (((Guerrero) p).isBloqueado()) 
 				System.out.println("El personaje " + p.getNombre() + " se ha defendido y no pierde vida");
 	}
+	
+//	private void cargado (Personaje p) {
+//		if (p instanceof Mago)
+//			if (((Mago) p).getCarga() >= 100) ´{
+//				
+//			}
+//	}
 }
