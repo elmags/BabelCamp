@@ -8,8 +8,14 @@ public class Batalla {
 		start(p1, p2);
 	}
 	
-	// Arco: Probabilidad del 20% de lanzar 2 flechas -> daño*2
-	// Hechizo: Cada vez que golpea, carga 40 de una barra de 100, cuando carga >= 100 -> daño + 15
+	/* Especiales
+	
+	Espada: Probabilidad del 35% de bloquear el ataque y no recibir daño
+	Arco: Probabilidad del 20% de lanzar 2 flechas -> daño*2
+	Hechizo: Cada vez que golpea, carga 40 de una barra de 100, cuando carga >= 100 -> daño + 15
+	Rezo: Cada vez que se utiliza cura al personaje 
+	
+	*/
 	
 	private void start(Personaje p1, Personaje p2) {
 		int i = 1;
@@ -46,11 +52,4 @@ public class Batalla {
 			if (((Guerrero) p).isBloqueado()) 
 				System.out.println("El personaje " + p.getNombre() + " se ha defendido y no pierde vida");
 	}
-	
-//	private void cargado (Personaje p) {
-//		if (p instanceof Mago)
-//			if (((Mago) p).getCarga() >= 100) ´{
-//				
-//			}
-//	}
 }
