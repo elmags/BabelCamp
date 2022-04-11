@@ -1,4 +1,4 @@
-package peristencia.interfaces;
+package persistencia.interfaces;
 
 import datos.Coche;
 import datos.Coches;
