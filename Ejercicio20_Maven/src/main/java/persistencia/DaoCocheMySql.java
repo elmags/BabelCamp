@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import datos.Coche;
 import datos.Coches;
-import peristencia.interfaces.DaoCoche;
+import persistencia.interfaces.DaoCoche;
 
 public class DaoCocheMySql implements DaoCoche {
 
