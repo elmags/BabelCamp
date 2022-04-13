@@ -14,6 +14,9 @@ public class MainCoches {
 		GestorCoche gc = new GestorCoche();
 		boolean validado = false;
 		
+		/*
+		 * El usuario solo tiene tres intentos para validar el nombre y la contraseña
+		 */
 		for(int intento = 1; intento < 4 && !validado; intento++) {
 			System.out.print(" Usuario: ");
 			String username = sc.next();

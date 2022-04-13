@@ -167,6 +167,10 @@ public class GestorCoche {
 		return coches;
 	}
 
+	/**
+	 * Método que almacena la lista de coches en un fichero TXT con formato JSON
+	 * @param csjson : lista de coches de la base de datos
+	 */
 	public void ficheroJson(Coches csjson) {
 		String path = "src/main/resources/json.txt";
 		try (FileWriter fw = new FileWriter(path)) {
@@ -183,6 +187,10 @@ public class GestorCoche {
 			System.out.println("El fichero JSON no se ha podido crear\n");
 	}
 
+	/**
+	 * Método que almacena la lista de coches en un fichero PDF
+	 * @param cspdf : lista de coches de la base de datos
+	 */
 	public void ficheroPdf(Coches cspdf) {
 		String path = "src/main/resources/coches.pdf";
 		try (PDDocument pdf = new PDDocument()) {
@@ -212,6 +220,10 @@ public class GestorCoche {
 			System.out.println("El fichero PDF no se ha podido crear\n");
 	}
 
+	/**
+	 * Método que almacena la lista de coches en un fichero Excel
+	 * @param csexcel : lista de coches de la base de datos
+	 */
 	public void ficheroExcel(Coches csexcel) {
 		HSSFWorkbook wb = new HSSFWorkbook();
 		HSSFSheet sheet = (HSSFSheet) wb.createSheet("coches");
@@ -251,6 +263,14 @@ public class GestorCoche {
 		}
 	}
 
+	/**
+	 * Método que realiza una peticion HTTP GET al servicio rest.
+	 * @param username : Nombre que el usuario introduce
+	 * @param password : Contraseña que el usuario introduce
+	 * @return
+	 * 			- True, en el caso de que el usuario se encuentre en la base de datos.
+	 * 			- False, en caso contrario.
+	 */
 	public boolean validar(String username, String password) {
 		boolean valido = false;
 			
