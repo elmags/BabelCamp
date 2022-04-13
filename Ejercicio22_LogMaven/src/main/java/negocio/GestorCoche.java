@@ -22,12 +22,12 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
 import datos.Coche;
 import datos.Coches;
+import datos.Validado;
 import persistencia.DaoCocheMySql;
 import persistencia.interfaces.DaoCoche;
 
@@ -252,7 +252,7 @@ public class GestorCoche {
 	}
 
 	public boolean validar(String username, String password) {
-		boolean valido;
+		boolean valido = false;
 			
 		try {
 			HttpRequest request = HttpRequest.newBuilder()
@@ -263,25 +263,17 @@ public class GestorCoche {
 			HttpClient client = HttpClient.newHttpClient();
 			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 			
-			System.out.println("Response: " + response);
-			System.out.println("BODY:   " + response.body());
-			JSONObject resp_json = new JSONObject(response.body().toString());
-			valido = resp_json.getBoolean("validado");
-			System.out.println(valido);
-			System.out.println("Response: " + response);
-			System.out.println("BODY:   " + response.body());
+			Gson gson = new Gson();
+			Validado validado = gson.fromJson(response.body(), Validado.class);
+			valido = validado.isValidado();
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
-			return false;
 		} catch (IOException e) {
 			e.printStackTrace();
-			return false;
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			return false;
 		} catch (JSONException e){
             e.printStackTrace();
-            return false;
         }
 		return valido;
 	}
