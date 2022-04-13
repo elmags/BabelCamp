@@ -1,27 +1,12 @@
 package main;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpHeaders;
-import java.net.http.HttpRequest;
-import java.net.http.HttpRequest.BodyPublisher;
-import java.net.http.HttpRequest.BodyPublishers;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import datos.Coche;
 import datos.Coches;
 import negocio.GestorCoche;
 
 public class MainCoches {
-	private static int intento = 1;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -30,13 +15,14 @@ public class MainCoches {
 		boolean validado = false;
 		
 		for(int intento = 1; intento < 4 && !validado; intento++) {
-			System.out.print("Usuario:");
+			System.out.print(" Usuario: ");
 			String username = sc.next();
-			System.out.print("Contraseña:");
+			System.out.print(" Contraseña: ");
 			String password = sc.next();
+			System.out.println();
 			validado = gc.validar(username, password);
-			if (intento == 3 && !validado) System.out.println("Se han acabado los intentos");
-			if (!validado && intento < 3) System.out.println("Quedan " + (3 - intento) + " intentos");
+			if (intento == 3 && !validado) System.out.println(" Se han acabado los intentos");
+			if (!validado && intento < 3) System.out.println(" Quedan " + (3 - intento) + " intentos\n");
 		}
 		
 		if (validado) {
