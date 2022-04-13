@@ -1,0 +1,19 @@
+<div class="content" >
+    <div class="borde">
+        <div class="name">
+            {{username}}
+        </div>
+        <nav class="menu">
+            <a [hidden]="comp != 3" class="marcado" id="listado" routerLink="/listado-vj/{{username}}">Listado de videojuegos</a>
+            <a [hidden]="comp == 3" id="listado" routerLink="/listado-vj/{{username}}">Listado de videojuegos</a>
+            <a [hidden]="comp != 2" class="marcado" id="inf" routerLink="/infUs">Sobre nosotros </a>
+            <a [hidden]="comp == 2" id="inf" routerLink="/infUs">Sobre nosotros </a>
+            <a [hidden]="comp != 1" class="marcado" id="contacto" routerLink="/contacto">Contactanos</a>
+            <a [hidden]="comp == 1" id="contacto" routerLink="/contacto">Contactanos</a>
+        </nav>
+        <div class="botones">
+            <button [hidden]="comp != 4" type="button" (click)="atras()">Atrás</button>
+            <button type="button" (click)="login()">Cerrar sesión</button>
+        </div>
+    </div>
+</div>

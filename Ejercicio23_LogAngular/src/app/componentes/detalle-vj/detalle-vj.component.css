@@ -1,0 +1,48 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    float:right;
+    margin-top: 2%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla {
+    padding: 25px;
+    padding-top: 30px;
+    margin-top: 50px;
+    border-width: 4px;
+    text-align: right;
+    float: left;
+    margin-top: 2%;
+    margin-left: 30px; 
+}
+
+.titulo {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+th {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.margen {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.imagenVj {
+    margin-left: 70px;
+    width: 240px;
+    height: 150px;
+}

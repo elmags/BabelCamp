@@ -1,0 +1,48 @@
+body {
+    background-color: #ffffff;
+}
+
+.borde {
+    padding: 25px 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    background-color: #a1968c;
+    text-align: center;
+}
+
+.name {
+    float: left;
+    font-size: 20px;
+    margin-top: -3px;
+}
+
+.menu {
+    display:inline-block;
+}
+
+a {
+    color: black;
+    padding: 12px; 
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #81776e;
+}
+
+.botones {
+    float: right;
+    margin-top: -9px;
+}
+
+button {
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 2px;
+}
+
+.marcado {
+    background-color: #81776e;
+}

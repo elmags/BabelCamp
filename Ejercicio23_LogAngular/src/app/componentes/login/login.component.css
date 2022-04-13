@@ -1,0 +1,73 @@
+body {
+    background-color: #ffffff;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 10% 0;
+}
+
+.borde {
+    width: 300px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    background-color: #a1968c;
+}
+
+.usuario {
+    display: block;
+    margin: auto;
+    width:80px;
+    height:80px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius:150px;
+    border-color: black;
+    background-color: white;
+}
+
+.errores {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.login {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+input {
+    display: block;
+}
+
+.boxU {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.boxP {
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.buttonLog {
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 30px;
+}

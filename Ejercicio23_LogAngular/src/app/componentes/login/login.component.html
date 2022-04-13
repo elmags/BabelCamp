@@ -1,0 +1,22 @@
+<div class="content" >
+    <div class="borde">
+        <div>
+            <img class="usuario" id="fotoUsuario" src="assets/user.png" alt="Usuario" />
+        </div>
+
+        <div class="errores">
+            <p class="error" *ngIf="error == 0">El usuario no es válido</p>
+            <p class="error" *ngIf="error == 1">Debe introducir un nombre de usuario y una contraseña</p>
+            <p class="error" *ngIf="error == 2">Debe introducir un nombre de usuario</p>
+            <p class="error" *ngIf="error == 3">Debe introducir una contraseña</p>
+        </div>
+
+        <div class="login">
+            <form action="" method="get">
+                <input class="boxU" type="text" name="username" placeholder="Nombre de usuario" [(ngModel)]="username" />
+                <input class="boxP" type="password" name="passwd" placeholder="Contraseña" [(ngModel)]="password" />
+                <input class="buttonLog" type="submit" value="Entrar" (click)="administrarErrores()" /> 
+            </form>
+        </div>
+    </div>
+</div>
