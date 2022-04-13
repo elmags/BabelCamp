@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-04-2022 a las 10:46:37
+-- Tiempo de generación: 13-04-2022 a las 18:50:30
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -18,53 +18,38 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `coches`
+-- Base de datos: `ejercicio21`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `coches`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `coches` (
-  `id` int(11) NOT NULL,
-  `matricula` varchar(7) NOT NULL,
-  `marca` varchar(45) NOT NULL,
-  `modelo` varchar(50) NOT NULL,
-  `kilometros` double NOT NULL
+CREATE TABLE `usuarios` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `coches`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `coches` (`id`, `matricula`, `marca`, `modelo`, `kilometros`) VALUES
-(1, '1234567', 'a', 'a', 15),
-(2, '1235678', 'b', 'a', 13.5),
-(3, '1234678', 'a', 'c', -14),
-(4, '1234568', 'a', 'a', 12);
+INSERT INTO `usuarios` (`username`, `password`) VALUES
+('username1', 'pass1'),
+('username2', 'pass2'),
+('username3', 'pass3');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `coches`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `coches`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `matricula` (`matricula`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `coches`
---
-ALTER TABLE `coches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
