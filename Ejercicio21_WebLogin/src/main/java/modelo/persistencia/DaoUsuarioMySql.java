@@ -12,6 +12,10 @@ import modelo.persistencia.interfaces.DaoUsuario;
 public class DaoUsuarioMySql implements DaoUsuario {
 
 	private Connection conn;
+	
+	/*
+	 * Para evitar problemas al conectar a la base de datos se debe cargar el Driver.
+	 */
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");//Mysql8
@@ -45,6 +49,10 @@ public class DaoUsuarioMySql implements DaoUsuario {
 		return usuario;
 	}
 	
+	/**
+	 * Método que realiza la conexión con la base de datos.
+	 * @return la conexión si se ha relizado correctamente, null en caso contrario.
+	 */
 	private Connection conectarConBBDD() {
 		String serverAddress = "localhost:3306";
 		String db = "ejercicio21";
@@ -59,6 +67,9 @@ public class DaoUsuarioMySql implements DaoUsuario {
 		return conn;
 	}
 	
+	/**
+	 * Método que cierra la conexión.
+	 */
 	private void cerrarConn() {
 		try {
 			conn.close();
@@ -67,6 +78,12 @@ public class DaoUsuarioMySql implements DaoUsuario {
 		}
 	}
 	
+	/**
+	 * Metodo auxiliar para obtener un Usuario de la base de datos.
+	 * @param rs : Resultado de la busqueda en la base de datos.
+	 * @return usuario encontrado en la base de datos.
+	 * @throws SQLException
+	 */
 	private Usuario usuarioFromRS(ResultSet rs) throws SQLException {
 		Usuario usuario = new Usuario(rs.getString("username"), rs.getString("password"));
 		return usuario;

@@ -1,5 +1,9 @@
 package modelo.datos;
 
+/*
+ * Esta clase ayuda a la creación del JSON que devuelve el servicio REST 
+ */
+
 public class Validado {
 	private boolean validado;
 	
