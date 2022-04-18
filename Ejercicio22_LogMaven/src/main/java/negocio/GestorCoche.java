@@ -8,6 +8,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpRequest.BodyPublishers;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 
@@ -27,6 +28,7 @@ import com.google.gson.Gson;
 
 import datos.Coche;
 import datos.Coches;
+import datos.Usuario;
 import datos.Validado;
 import persistencia.DaoCocheMySql;
 import persistencia.interfaces.DaoCoche;
@@ -271,7 +273,7 @@ public class GestorCoche {
 	 * 			- True, en el caso de que el usuario se encuentre en la base de datos.
 	 * 			- False, en caso contrario.
 	 */
-	public boolean validar(String username, String password) {
+	public boolean validarGET(String username, String password) {
 		boolean valido = false;
 			
 		try {
@@ -284,6 +286,44 @@ public class GestorCoche {
 			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 			
 			Gson gson = new Gson();
+			Validado validado = gson.fromJson(response.body(), Validado.class);
+			valido = validado.isValidado();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (JSONException e){
+            e.printStackTrace();
+        }
+		return valido;
+	}
+	
+	/**
+	 * Método que realiza una peticion HTTP POST al servicio rest.
+	 * @param username : Nombre que el usuario introduce
+	 * @param password : Contraseña que el usuario introduce
+	 * @return
+	 * 			- True, en el caso de que el usuario se encuentre en la base de datos.
+	 * 			- False, en caso contrario.
+	 */
+	public boolean validarPOST(String username, String password) {
+		boolean valido = false;
+		Usuario usuario = new Usuario(username, password);
+		
+		Gson gson = new Gson();
+		String body = gson.toJson(usuario);
+		
+		try {
+			HttpRequest request = HttpRequest.newBuilder()
+					.uri(new URI("http://localhost:8080/Ejercicio21_WebLogin/usuarios/login"))
+					.POST(BodyPublishers.ofString(body))
+					.build();
+	
+			HttpClient client = HttpClient.newHttpClient();
+			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+			
 			Validado validado = gson.fromJson(response.body(), Validado.class);
 			valido = validado.isValidado();
 		} catch (URISyntaxException e) {

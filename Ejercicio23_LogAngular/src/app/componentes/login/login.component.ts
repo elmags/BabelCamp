@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
     this.mostrarError()
     if (this.error == 0) {
       this._loginService.get(this.username, this.password)
+      // this._loginService.post(this.username, this.password)
         .subscribe((respuesta) => {
           if (respuesta.validado) {
             sessionStorage.setItem("username", this.username);

@@ -2,6 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -61,7 +63,30 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		
+		Gson gson = new Gson();
+		String body = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+		Usuario usuarioBody = gson.fromJson(body, Usuario.class);
+		
+		Validado validado = new Validado();
+		
+		PrintWriter pw = response.getWriter();
+		response.setContentType("application/json");
+	    response.setCharacterEncoding("UTF-8");
+		
+		Usuario usuario = gu.get(usuarioBody.getUsername());
+		 
+		if (usuario != null && usuario.getPassword().equals(usuarioBody.getPassword())) {
+			validado.setValidado(true);
+			System.out.println("El usuario es válido");
+		} 
+		else {
+			validado.setValidado(false);
+			System.out.println("El usuario no es válido");
+		}
+		String resp = gson.toJson(validado);
+		pw.print(resp);
 	}
 
 }

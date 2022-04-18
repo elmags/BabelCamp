@@ -23,7 +23,8 @@ public class MainCoches {
 			System.out.print(" Contraseña: ");
 			String password = sc.next();
 			System.out.println();
-			validado = gc.validar(username, password);
+//			validado = gc.validarGET(username, password);
+			validado = gc.validarPOST(username, password);
 			if (intento == 3 && !validado) System.out.println(" Se han acabado los intentos");
 			if (!validado && intento < 3) System.out.println(" Quedan " + (3 - intento) + " intentos\n");
 		}
